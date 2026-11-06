@@ -1,0 +1,10 @@
+{
+  "dataset": "openFDA NDC",
+  "endpoint": "https://api.fda.gov/drug/ndc.json?limit=100",
+  "default_limit": 100,
+  "retrieved": true,
+  "file": "data/reference/openfda_ndc.json",
+  "size_bytes": 157282,
+  "md5": "e86f25dd3e7ef61c8eb30d450c28f15c",
+  "automatic_download": false
+}

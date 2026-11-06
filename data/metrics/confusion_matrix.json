@@ -1,0 +1,17 @@
+{
+  "labels": [
+    0,
+    1
+  ],
+  "matrix": [
+    [
+      10731,
+      39
+    ],
+    [
+      536,
+      694
+    ]
+  ],
+  "model": "RandomForestClassifier"
+}

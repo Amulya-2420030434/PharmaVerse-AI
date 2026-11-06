@@ -1,0 +1,168 @@
+{
+  "batches.csv": {
+    "columns": [
+      "batch_id",
+      "medicine_id",
+      "manufacturer_id",
+      "country_of_origin",
+      "production_date",
+      "expiry_date",
+      "quantity",
+      "serial_number",
+      "lot_number"
+    ],
+    "dtypes": {
+      "batch_id": "str",
+      "medicine_id": "str",
+      "manufacturer_id": "str",
+      "country_of_origin": "str",
+      "production_date": "str",
+      "expiry_date": "str",
+      "quantity": "int64",
+      "serial_number": "str",
+      "lot_number": "str"
+    }
+  },
+  "entities.csv": {
+    "columns": [
+      "entity_id",
+      "entity_type",
+      "country",
+      "regulator",
+      "enforcement_level",
+      "city",
+      "latitude",
+      "longitude",
+      "license_number",
+      "license_status",
+      "license_expiry",
+      "gmp_compliant",
+      "pics_compliant",
+      "sfda_gmp_status",
+      "audit_score",
+      "years_of_operation",
+      "is_importer",
+      "import_certificate",
+      "export_certificate",
+      "customs_clearance",
+      "batch_release_certificate"
+    ],
+    "dtypes": {
+      "entity_id": "str",
+      "entity_type": "str",
+      "country": "str",
+      "regulator": "str",
+      "enforcement_level": "str",
+      "city": "str",
+      "latitude": "float64",
+      "longitude": "float64",
+      "license_number": "str",
+      "license_status": "str",
+      "license_expiry": "str",
+      "gmp_compliant": "bool",
+      "pics_compliant": "bool",
+      "sfda_gmp_status": "str",
+      "audit_score": "float64",
+      "years_of_operation": "int64",
+      "is_importer": "bool",
+      "import_certificate": "object",
+      "export_certificate": "object",
+      "customs_clearance": "object",
+      "batch_release_certificate": "object"
+    }
+  },
+  "fraud_events.csv": {
+    "columns": [
+      "batch_id",
+      "is_fraud_ground_truth",
+      "fraud_type",
+      "in_ring"
+    ],
+    "dtypes": {
+      "batch_id": "str",
+      "is_fraud_ground_truth": "bool",
+      "fraud_type": "str",
+      "in_ring": "bool"
+    }
+  },
+  "medicines.csv": {
+    "columns": [
+      "medicine_id",
+      "drug_type",
+      "storage_min",
+      "storage_max",
+      "is_cold_chain",
+      "shelf_life_days",
+      "price"
+    ],
+    "dtypes": {
+      "medicine_id": "str",
+      "drug_type": "str",
+      "storage_min": "int64",
+      "storage_max": "int64",
+      "is_cold_chain": "bool",
+      "shelf_life_days": "int64",
+      "price": "float64"
+    }
+  },
+  "transactions.csv": {
+    "columns": [
+      "batch_id",
+      "country",
+      "event_type",
+      "leg",
+      "timestamp",
+      "temperature",
+      "humidity",
+      "gps_lat",
+      "gps_lng",
+      "qr_verified",
+      "rfid_scanned",
+      "seal_intact",
+      "weight",
+      "door_open",
+      "battery_level",
+      "sensor_id",
+      "is_fraud_ground_truth",
+      "fraud_type",
+      "is_masked",
+      "is_suspicious_genuine",
+      "is_fraud_detected",
+      "previous_hash",
+      "current_hash",
+      "batch_tx_index",
+      "rolling_excursion_rate",
+      "duplicate_serial",
+      "cumulative_excursion_time"
+    ],
+    "dtypes": {
+      "batch_id": "str",
+      "country": "str",
+      "event_type": "str",
+      "leg": "int64",
+      "timestamp": "str",
+      "temperature": "float64",
+      "humidity": "float64",
+      "gps_lat": "float64",
+      "gps_lng": "float64",
+      "qr_verified": "bool",
+      "rfid_scanned": "bool",
+      "seal_intact": "bool",
+      "weight": "float64",
+      "door_open": "bool",
+      "battery_level": "int64",
+      "sensor_id": "str",
+      "is_fraud_ground_truth": "bool",
+      "fraud_type": "float64",
+      "is_masked": "bool",
+      "is_suspicious_genuine": "bool",
+      "is_fraud_detected": "bool",
+      "previous_hash": "str",
+      "current_hash": "str",
+      "batch_tx_index": "int64",
+      "rolling_excursion_rate": "float64",
+      "duplicate_serial": "bool",
+      "cumulative_excursion_time": "float64"
+    }
+  }
+}

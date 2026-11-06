@@ -1,0 +1,44 @@
+PharmaVerse AI — Release-Freeze Audit Summary
+Audit date: 2026-10-01
+
+This is a scoped validation report, not a production-readiness certification.
+The detailed current findings are in FINAL-VALIDATION-REPORT.md.
+
+Automated validation in this pass:
+- Backend pytest: 135 passed (128 deprecation warnings; exit 0)
+- Backend compileall: passed
+- Frontend tests: 4 passed
+- Strict ESLint: passed
+- Frontend production build: passed with a Vite chunk-size advisory
+
+Current design and verification limits:
+- Shipment receipt records DELIVERED and actual_arrival together. The timeline
+  labels the real persisted event “Arrived at destination · Delivered”; a
+  distinct ARRIVED state is not warranted by the current business contract.
+- QR scanner and manual-entry workflow are implemented. Physical camera-frame
+  decoding was not verified.
+- Fabric is disabled and has no configured gateway. Docker is unavailable;
+  live ledger E2E is environment-dependent and not verified.
+- Current backend role names: ADMIN, REGULATOR, MANUFACTURER, DISTRIBUTOR,
+  PHARMACY, TRANSPORTER. The ADMIN dashboard route and API both require ADMIN.
+- No working/default demo login credentials are provisioned. The current
+  database has three MANUFACTURER accounts and no ADMIN account.
+- Browser verification in this pass covered the login page and unauthenticated
+  redirects only. Full authenticated page E2E was blocked by unavailable
+  provisioned credentials.
+- Database snapshot: 53 drugs, 202 batches, 202 QR, 202 RFID, 301 shipments.
+  All checked batch/QR/RFID/shipment relationships had zero orphans. Totals
+  exceed the seed baseline; unexplained extra records were left untouched.
+
+Startup (from the project root, use two PowerShell windows):
+
+Backend:
+  Set-Location .\backend
+  .\venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+
+Frontend:
+  Set-Location .\frontend
+  npm.cmd run dev -- --host 127.0.0.1
+
+Frontend: http://127.0.0.1:5173
+API docs: http://127.0.0.1:8000/docs

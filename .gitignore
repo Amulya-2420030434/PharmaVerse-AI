@@ -1,0 +1,105 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# ===== Python virtual environments =====
+venv/
+.venv/
+env/
+backend/venv/
+simulator/venv/
+
+# ===== Environment / secrets =====
+.env
+.env.*
+.env.local
+.env.development
+.env.production
+!.env.example
+!**/.env.example
+backend/.env
+frontend/.env
+
+# ===== Node / React =====
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ===== Blockchain / Fabric node deps & build output =====
+blockchain/**/node_modules/
+
+# ===== Local databases =====
+*.db
+*.sqlite
+*.sqlite3
+
+# ===== Logs / temporary files =====
+*.log
+*.tmp
+*.temp
+
+# ===== OS / editor =====
+.DS_Store
+Thumbs.db
+
+# ===== Coverage / test artifacts =====
+coverage/
+.nyc_output/
+
+# ===== Fabric / blockchain local runtime credentials & generated material =====
+**/wallet/
+**/wallets/
+**/organizations/
+**/crypto-material/
+**/crypto-config/
+**/generated/
+
+# ===== Large raw / generated dataset files (kept on disk for ML, NOT tracked) =====
+data/raw/Phase1_Dataset/dataset/*.csv
+data/raw/Phase1_Dataset/dataset/*.parquet
+
+# Hyperledger Fabric generated crypto identities and private keys
+blockchain/crypto/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+
+# Node dependencies
+node_modules/
+**/node_modules/
+
+# Build output
+frontend/dist/
+
+# Test and editor artifacts
+.pytest_cache/
+.vscode/
+*.log
+*_test_results.txt
+
+
+# Local backend environment secrets
+backend/.env
+
+# Sensitive key and certificate material
+*.pem
+*.key
+*.crt
+*.cer
+*.der
+*.p12
+*.pfx
+*.p8
+*.jks
+*_sk
+**/wallet/
+**/wallets/
+**/crypto/

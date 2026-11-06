@@ -1,0 +1,4 @@
+{"anomaly_count": 0, "high_severity_count": 0, "identity_anomaly_count": 0, "sensor_anomaly_count": 0, "label": 0}
+{"anomaly_count": 1, "high_severity_count": 1, "identity_anomaly_count": 1, "sensor_anomaly_count": 0, "label": 1}
+{"anomaly_count": 2, "high_severity_count": 0, "identity_anomaly_count": 0, "sensor_anomaly_count": 2, "label": 1}
+{"anomaly_count": 1, "high_severity_count": 0, "identity_anomaly_count": 0, "sensor_anomaly_count": 1, "label": 0}

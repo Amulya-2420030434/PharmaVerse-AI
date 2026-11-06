@@ -1,0 +1,50 @@
+{
+  "feature_names": [
+    "anomaly_count",
+    "high_severity_count",
+    "identity_anomaly_count",
+    "sensor_anomaly_count"
+  ],
+  "group_counts": {
+    "train": 38400,
+    "validation": 9600,
+    "test": 12000
+  },
+  "class_distribution": {
+    "all": {
+      "0": 53904,
+      "1": 6096
+    },
+    "test": {
+      "0": 10770,
+      "1": 1230
+    }
+  },
+  "dataset": "TRACE-X synthetic benchmark",
+  "rows": 60000,
+  "fraud_rows": 6096,
+  "train_rows": 38400,
+  "validation_rows": 9600,
+  "test_rows": 12000,
+  "grouping": "batch_id",
+  "random_seed": 42,
+  "models": {
+    "LogisticRegression": {
+      "accuracy": 0.95,
+      "precision": 0.9861111111111112,
+      "recall": 0.5195121951219512,
+      "f1": 0.6805111821086262,
+      "roc_auc": 0.8759264291807263,
+      "pr_auc": 0.7400773853784738
+    },
+    "RandomForestClassifier": {
+      "accuracy": 0.9520833333333333,
+      "precision": 0.946793997271487,
+      "recall": 0.5642276422764227,
+      "f1": 0.7070809984717269,
+      "roc_auc": 0.9086664628484725,
+      "pr_auc": 0.7558249694894007
+    }
+  },
+  "selected_model": "RandomForestClassifier"
+}

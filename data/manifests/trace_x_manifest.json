@@ -1,0 +1,11 @@
+{
+  "dataset": "TRACE-X Phase 1",
+  "purpose": "pharmaceutical logistics research benchmark",
+  "source": "https://zenodo.org/records/21441110",
+  "file": "Phase1_Dataset.zip",
+  "retrieved": true,
+  "size_bytes": 260187809,
+  "md5": "5985ff285ee37f4090ec7430503b7056",
+  "automatic_download": false,
+  "processing": "transactions aggregated by batch_id with grouped train/validation/test splits"
+}

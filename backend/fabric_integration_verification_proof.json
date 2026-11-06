@@ -1,0 +1,20 @@
+{
+  "status": "VERIFIED_SUCCESS",
+  "timestamp": "2026-11-04T17:46:42.895796+00:00",
+  "synthetic_identifiers": {
+    "drug_id": "PV_TEST_DRUG_20261104_174628",
+    "batch_id": "PV_TEST_BATCH_20261104_174628",
+    "shipment_id": "PV_TEST_SHIP_20261104_174628",
+    "qr_id": "QR-MED-PV_TEST_BATCH_20261104_174628",
+    "rfid_id": "RFID-MED-PV_TEST_BATCH_20261104_174628"
+  },
+  "transaction_ids": {
+    "drug_registration": "29e394efe2cca35e5020dec8f804add76e698614979ab38ef47adaa71a67d8d2",
+    "batch_creation": "47eae014002a4a16cc84c754afdc733c9f82320f5550911d994ce431d26fce73",
+    "shipment_departure": "3be02176637c63348bd9f9657c38d658a0c309f17a0c6dab204c7417a1ee57fa",
+    "shipment_receipt": "1e988a09f28e2b540a2b7dee6a70b01f77995e1ed6809164e3f972535cf88ba5"
+  },
+  "audit_trace_source": "POSTGRESQL_AND_FABRIC",
+  "fabric_history_count": 3,
+  "reconciliation_status": "RECONCILED_IN_SYNC"
+}

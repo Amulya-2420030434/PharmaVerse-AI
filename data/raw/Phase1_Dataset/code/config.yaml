@@ -1,0 +1,118 @@
+seed: 42
+
+date_start: "2024-01-01"
+date_end: "2026-06-30"
+
+scale:
+  mode: "pilot"
+  pilot:
+    n_batches: 60000
+  full:
+    n_batches: 600000
+
+fraud:
+  base_rate: 0.10
+  robustness_rates: [0.05, 0.136, 0.15]
+  detection_rate: 0.65
+  type_distribution:
+    counterfeit: 0.30
+    diversion: 0.15
+    fake_qr: 0.15
+    tampering: 0.10
+    temperature: 0.10
+    unauthorized_manufacturer: 0.08
+    duplicate_batch: 0.05
+    theft: 0.04
+    relabel: 0.03
+
+cold_chain:
+  excursion_rate: 0.18
+  significant_fraction: 0.41
+  false_alarm_fraction: 0.50
+
+hard_cases:
+  suspicious_genuine_share: 0.12
+  masked_fraud_share: 0.02
+  mnar_missing_tampered: 0.25
+  mnar_missing_genuine: 0.01
+
+storage_ranges:
+  vaccine:   {min: 2,  max: 8,  cold_chain: true}
+  insulin:   {min: 2,  max: 8,  cold_chain: true}
+  biologic:  {min: 2,  max: 8,  cold_chain: true}
+  tablet:    {min: 15, max: 25, cold_chain: false}
+  syrup:     {min: 10, max: 25, cold_chain: false}
+
+n_medicines: 300
+
+countries:
+  KSA:
+    regulator: "SFDA"
+    enforcement_level: "strict"
+    traceability_system: "DTTS"
+    import_clearance: "IBRCS"
+    hubs: ["Riyadh", "Jeddah", "Dammam", "Mecca", "Medina"]
+    faker_locale: "ar_SA"
+    summer_heat_risk: 0.30
+    entities:
+      manufacturer: 8
+      supplier: 20
+      quality_lab: 8
+      packaging_center: 8
+      warehouse: 12
+      logistics: 10
+      distributor: 40
+      pharmacy: 500
+      hospital: 80
+      regulator: 1
+
+  PK:
+    regulator: "DRAP"
+    enforcement_level: "soft"
+    traceability_system: "PICS"
+    import_clearance: "manual"
+    hubs: ["Karachi", "Lahore", "Islamabad", "Faisalabad", "Peshawar", "Quetta"]
+    faker_locale: "en_PK"
+    summer_heat_risk: 0.25
+    entities:
+      manufacturer: 15
+      supplier: 40
+      quality_lab: 15
+      packaging_center: 15
+      warehouse: 25
+      logistics: 20
+      distributor: 80
+      pharmacy: 1000
+      hospital: 150
+      regulator: 1
+
+cross_border:
+  edge_fraction: 0.12
+  customs_extra_days: [1, 5]
+
+fraud_rings:
+  - id: "RING_01"
+    fraud_type: "counterfeit"
+    window: ["2025-03-01", "2025-06-30"]
+    entity_types: ["manufacturer", "distributor", "logistics"]
+    country: "PK"
+  - id: "RING_02"
+    fraud_type: "diversion"
+    window: ["2025-09-01", "2025-12-31"]
+    entity_types: ["warehouse", "distributor"]
+    country: "KSA"
+
+temporal_campaigns:
+  - window: ["2025-03-01", "2025-05-31"]
+    boost: 1.5
+  - window: ["2026-01-01", "2026-02-28"]
+    boost: 1.3
+
+split:
+  strategy: "temporal"
+  train_end: "2025-08-31"
+  test_start: "2025-09-01"
+
+output:
+  dir: "./dataset_out"
+  format: "parquet"

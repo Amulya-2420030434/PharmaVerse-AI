@@ -1,0 +1,15 @@
+{
+  "dataset": "TRACE-X synthetic benchmark",
+  "source": "C:\\Users\\hp\\OneDrive\\Desktop\\Harini\\College\\SOA\\pharmaverse-ai\\data\\raw\\trace_x\\Phase1_Dataset\\dataset\\transactions.csv",
+  "model": "RandomForestClassifier",
+  "feature_names": [
+    "anomaly_count",
+    "high_severity_count",
+    "identity_anomaly_count",
+    "sensor_anomaly_count"
+  ],
+  "label": "is_fraud_ground_truth aggregated by batch_id",
+  "random_seed": 42,
+  "grouping": "batch_id",
+  "fit_scope": "full aggregated dataset for runtime artifact; metrics use held-out grouped test split"
+}
